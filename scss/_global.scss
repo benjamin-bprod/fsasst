@@ -1,0 +1,11 @@
+@import './vars';
+
+*, ::after, ::before{
+    box-sizing: border-box;
+}
+
+html, body{
+    *{
+        font-family: $primary-font;
+    }
+}

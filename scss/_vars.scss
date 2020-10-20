@@ -1,0 +1,71 @@
+/******** COLORS ********/
+$primary:           #27476E;
+$primary-contrast:  #FFFFFF;
+$accent:            #ECA400;
+$accent-contrast:   #FFFFFF;
+$alert:             #AB1C19;
+$success:           #1AAB47;
+$black:             #000000;
+$white:             #FFFFFF;
+
+$whitesmoke:        #F5F5F5;
+$gainsboro:         #DCDCDC;
+$lightgrey:         #CECECE;
+$silver:            #C0C0C0;
+$darkgrey:          #A9A9A9;
+$grey:              #808080;
+$dimgrey:           #696969;
+
+$colors: (
+    "primary":       $primary,
+    "accent":        $accent,
+    "alert":         $alert,
+    "success":       $success
+);
+
+$greys: (
+    "grey1":        $whitesmoke,
+    "grey2":        $gainsboro,
+    "grey3":        $lightgrey,
+    "grey4":        $silver,
+    "grey5":        $darkgrey,
+    "grey6":        $grey,
+    "grey7":        $dimgrey,
+);
+
+$COLORS: map-merge($colors, $greys);
+
+$primary-font: Sans-Serif;
+
+/******** BREAKPOINTS ********/
+$breakpoint-md: 576;
+$breakpoint-lg: 960;
+
+$breakpoints: (
+    "tablet": $breakpoint-md,
+    "desktop": $breakpoint-lg
+);
+
+/******** GRID ********/
+$gutter: 15px;
+$containerMaxWidth: 900px;
+
+/******** FORM ********/
+$formPadding: 8px;
+$formRowPadding: 8px 0;
+
+$labelPadding: 8px;
+
+$inputHeight: 38px;
+$inputPadding: 8px;
+$inputBorderRadius: 2px;
+$inputBorderColor: $grey;
+$inputColor: $black;
+$inputShadowFocusColor: $grey;
+
+$inputIconSize: 20px;
+$inputIconColor: $primary;
+
+$textareaResize: vertical;
+
+$buttonShadowActiveColor: $grey;

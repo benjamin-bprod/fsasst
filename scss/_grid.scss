@@ -1,0 +1,59 @@
+%container,
+.container{
+    max-width: $containerMaxWidth;
+    margin: auto;
+}
+
+%flex-row,
+.flex-row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+%flex-column,
+.flex-column{
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    margin-top: -#{$gutter};
+    margin-bottom: -#{$gutter};
+}
+
+
+%col,
+.col{
+    flex-grow: 1;
+    max-width: 100%;
+    padding-right: $gutter;
+    padding-left: $gutter;
+}
+
+@for $i from 12 through 1 {
+    %col-#{$i},
+    .col-#{$i} {
+        position: relative;
+        flex: 0 0 $i * (100% / 12);
+        max-width: $i * (100% / 12);
+        padding-right: $gutter;
+        padding-left: $gutter;
+    }
+}
+
+@each $name, $number in $breakpoints{
+    %col-#{$name},
+    .col-#{$name}{
+        @extend %col;
+    }
+    @for $i from 12 through 1 {
+        %col-#{$name}-#{$i},
+        .col-#{$name}-#{$i} {
+            @media only screen and (min-width: #{$number}px){
+                position: relative;
+                flex:0 0 $i * (100% / 12);
+                max-width: $i * (100% / 12);
+                padding-right: $gutter;
+                padding-left: $gutter;
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+@import './vars';
+
+// SET CSS COLORS VARIABLES
+:root{
+    @each $name, $hex in $COLORS {
+        --#{$name}: #{$hex};
+    }
+}
+
+// GENERATE BACKGROUND COLOR AND COLOR CLASS
+@each $name, $hex in $COLORS {
+    %bg-#{$name},
+    .bg-#{$name}{
+        background-color: #{$hex};
+    }
+
+    %color-#{$name},
+    .color-#{$name}{
+        color: #{$hex};
+    }
+}

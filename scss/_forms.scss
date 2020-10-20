@@ -1,0 +1,169 @@
+@import './vars';
+@import './grid';
+
+.form-row{
+    @extend %flex-row;
+}
+.form-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+    padding: 0 $gutter;
+    &:not([class*="col"]){
+        width: 100%;
+        max-width: 100%;
+    }
+    label{
+        text-transform: uppercase;
+        color: $inputColor;
+    }
+
+}
+input,
+select,
+textarea{
+    $width: ($inputPadding * 2 + 2px);
+    cursor: inherit;
+    padding: ($inputPadding / 2) $inputPadding;
+    margin: 0;
+    height: $inputHeight;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    background-color: transparent;
+    border: 1px solid $inputBorderColor;
+    border-radius: $inputBorderRadius;
+    outline: none;
+    &:focus{
+        box-shadow: 0 0 5px $inputShadowFocusColor;
+    }
+}
+
+label{
+    padding: 0 0 4px 16px;
+}
+
+input{
+    background-color: transparent;
+    &[type=checkbox],
+    &[type=radio]{
+        display: none;
+        ~ label{
+            padding: 0;
+            display: flex;
+            align-items: center;
+            &:active:before{
+                box-shadow: 0 0 5px $grey;
+            }
+        }
+    }
+}
+
+// CHECKBOX
+
+%checkbox{
+    &:before{
+        margin-right: 5px;
+        width: $inputIconSize;
+        height: $inputIconSize;
+        content: " ";
+        border: 1px solid $inputBorderColor;
+    }
+    &:after{
+        content: "\2713";
+        position: absolute;
+        display: none;
+        width: $inputIconSize;
+        height: $inputIconSize;
+        font-size: $inputIconSize;
+        line-height: $inputIconSize;
+        color: $inputIconColor;
+        padding: 0 $inputIconSize / 10;
+    }
+}
+
+input[type=checkbox] ~ label {
+    @extend %checkbox;
+}
+
+// RADIO
+
+%radio{
+    &:before{
+        margin-right: 5px;
+        width: $inputIconSize;
+        height: $inputIconSize;
+        content: " ";
+        border: 1px solid $inputBorderColor;
+        border-radius: 50%;
+    }
+    &:after{
+        width: $inputIconSize / 2;
+        height: $inputIconSize / 2;
+        background-color: $inputIconColor;
+        content: " ";
+        border-radius: 50%;
+        display: none;
+        transform: translateX($inputIconSize / 4);
+        position: absolute;
+    }
+}
+
+input[type=radio] ~ label {
+    @extend %radio;
+}
+
+input[type=checkbox]:checked ~ label,
+input[type=radio]:checked ~ label{
+    &:after{
+        display: block;
+    }
+}
+
+textarea{
+    resize: $textareaResize;
+}
+
+button{
+    border: none;
+    outline: none;
+    font-family: inherit;
+    padding: 0;
+    margin: 0;
+    background: none;
+    @extend %cta;
+    @extend %cta-accent;
+}
+%cta,
+.cta{
+    cursor: pointer;
+    padding: 8px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: inherit;
+    letter-spacing: 2px;
+    border-radius: $inputBorderRadius;
+    &:active{
+        box-shadow: 0 0 5px $buttonShadowActiveColor;
+    }
+}
+
+%cta-primary,
+.cta-primary{
+    background-color: $primary;
+    color: $primary-contrast;
+    &:hover{
+        background-color: darken($primary, 3);
+    }
+}
+
+%cta-accent,
+.cta-accent{
+    background-color: $accent;
+    color: $accent-contrast;
+    &:hover{
+        background-color: darken($accent, 3);
+    }
+}

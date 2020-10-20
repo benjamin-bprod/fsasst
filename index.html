@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fsasst</title>
+    <link rel="stylesheet" href="./dist/app.css">
+</head>
+<body>
+    <!-- GRID -->
+    <div id="grid" class="container">
+        <div class="flex-row">
+            <h1>GRID</h1>
+        </div>
+        <div class="flex-row">
+            <div class="col-12 col-tablet-3 bg-accent" style="border: 1px solid black;">COL-12 | COL-TABLET-3</div>
+            <div class="col-12 col-tablet-6 bg-accent" style="border: 1px solid black;">COL-12 | COL-TABLET-6</div>
+            <div class="col-12 col-tablet-3 bg-accent" style="border: 1px solid black;">COL-12 | COL-TABLET-3</div>
+        </div>
+        <div class="flex-row">
+            <div class="col-3 bg-accent" style="border: 1px solid black;">COL-3</div>
+            <div class="col-5 bg-accent" style="border: 1px solid black;">COL-5</div>
+            <div class="col-3 bg-accent" style="border: 1px solid black;">COL-3</div>
+        </div>
+        <div class="flex-row">
+            <div class="col-6 bg-accent" style="border: 1px solid black;">COL-6</div>
+            <div class="col-6 bg-accent" style="border: 1px solid black;">COL-6</div>
+        </div>
+        <div class="flex-row">
+            <div class="col-12 bg-accent" style="border: 1px solid black;">COL-12</div>
+        </div>
+    </div>
+
+    <!-- FORM -->
+    <div id="forms" class="container">
+        <h1>FORMS</h1>
+        <div class="form-row">
+            <div class="form-block">
+                <label for="test-text-1">Label 2</label>
+                <input type="text" id="test-text" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-block col-6">
+                <label for="test-text-2">Label 2</label>
+                <input type="text" id="test-text" />
+            </div>
+            <div class="form-block col-6">
+                <label for="test-text-3">Label 2</label>
+                <input type="text" id="test-text" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-block col">
+                <input id="test-checkbox" type="checkbox" />
+                <label for="test-checkbox">Label</label>
+            </div>
+            <div class="form-block col">
+                <input id="test-radio-1" type="radio" name="radio-test" value="one"/>
+                <label for="test-radio-1">Label One</label>
+            </div>
+            <div class="form-block col">
+                <input id="test-radio-2" type="radio" name="radio-test" value="two"/>
+                <label for="test-radio-2">Label One</label>
+            </div>
+            <div class="form-block col">
+                <input id="test-radio-3" type="radio" name="radio-test" value="three"/>
+                <label for="test-radio-3">Label three</label>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-block col-4">
+                <select>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                    <option>Option 4</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-block col-12">
+                <label for="textarea">My Textarea</label>
+                <textarea id="textarea"></textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-block col-4">
+                <button class="cta cta-primay">Submit</button>
+            </div>
+            <div class="form-block col-4">
+                <button class="cta cta-primay">Submit</button>
+            </div>
+            <div class="form-block col-4">
+                <button class="cta cta-primay">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
